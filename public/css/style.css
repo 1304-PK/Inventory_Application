@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+button{
+    cursor: pointer;
+}
+
+#introduction{
+    background-color: #38a3a5;
+    color: white;
+}
+
+#navs{
+    display: flex;
+    background-color: #57cc99;
+    gap: 5vmin;
+    justify-content: center;
+    padding: 2vmin 0;
+}
+
+#navs div{
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 4vmin 2vmin;
+}
