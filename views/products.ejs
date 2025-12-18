@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/products.css">
+    <title>All Products</title>
+</head>
+<body>
+    <header>
+        All Products
+    </header>
+    <div id="products-section">
+        <div id="product">
+            <% products_list.forEach(item => { %>
+                <img src=<%= item.image_url %> alt="">
+                <p><%= item.name %></p>
+                <p><%= item.category %></p>
+                <p><%= item.price %></p>
+                <p><%= item.amount %></p>
+            <%})%>
+        </div>
+    </div>
+</body>
+</html>
