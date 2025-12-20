@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        CATEGORIES
+        <button id="add-cat-btn">+</button>
+    </header>
+    <div>
+        <% categories.forEach(item => { %>
+            <button>
+                <%= item.category %>
+            </button>
+       <% }) %>
+    </div>
+
+    <dialog id="new-cat-dialog">
+        <form action="/new_category" method="POST">
+            Add new category
+            <label for="category_name">Enter name of Category</label>
+            <input type="text" required placeholder="category_name" name="category_name" id="category_name">
+            <button type="submit">Submit</button>
+        </form>
+    </dialog>
+
+    <script src="js/category_page.js"></script>
+</body>
+</html>
