@@ -1,25 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/products.css">
-    <title>All Products</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Products</title>
+  <link rel="stylesheet" href="css/products.css">
 </head>
 <body>
-    <header>
-        All Products
-    </header>
-    <div id="products-section">
-        <div id="product">
-            <% products_list.forEach(item => { %>
-                <img src=<%= item.image_url %> alt="">
-                <p><%= item.name %></p>
-                <p><%= item.category %></p>
-                <p><%= item.price %></p>
-                <p><%= item.amount %></p>
-            <%})%>
-        </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </div>
+      <h1 class="title">All Products</h1>
     </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <!-- <aside class="sidebar">
+      <h2 class="sidebar-title">Categories</h2>
+      <nav class="sidebar-nav">
+        <button class="nav-item active">All</button>
+        <button class="nav-item">Electronics</button>
+        <button class="nav-item">Accessories</button>
+        <button class="nav-item">Footwear</button>
+        <button class="nav-item">Appliances</button>
+        <button class="nav-item">Home</button>
+      </nav>
+    </aside> -->
+
+    <!-- Products Grid -->
+    <main class="products-grid">
+       <% products_list.forEach(item => { %>
+        <div class="product-card">
+        <div class="product-image">
+          <img src="<%= item.image_url %>" alt="Wireless Headphones">
+        </div>
+        <div class="product-content">
+          <h3 class="product-name"><%= item.name %></h3>
+          <p class="product-price">$<%= item.price %></p>
+          <!-- <span class="product-category"><%= item.name %></span> -->
+          <div class="amount-controls">
+            <span class="stock-label">Stock:</span>
+            <div class="amount-buttons">
+              <button class="amount-btn">−</button>
+              <span class="amount-value"><%= item.amount %></span>
+              <button class="amount-btn">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+       <% }) %>
+    </main>
+  </div>
 </body>
 </html>
